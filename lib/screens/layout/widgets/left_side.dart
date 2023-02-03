@@ -1,4 +1,3 @@
-import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 class LeftSide extends StatelessWidget {
@@ -6,32 +5,86 @@ class LeftSide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: 40,
-      child: Container(
-        color: const Color.fromRGBO(238, 232, 213, 1),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            WindowTitleBarBox(
-              child: MoveWindow(),
-            ),
-            Tooltip(
-              message: '首页',
-              displayHorizontally: true,
-              useMousePosition: false,
-              style: const TooltipThemeData(preferBelow: true),
-              child: IconButton(
-                icon: const Icon(
-                  FluentIcons.home,
-                  size: 22.0,
-                  color: Color.fromRGBO(108, 112, 106, 1),
+      padding: EdgeInsets.zero,
+      color: const Color.fromRGBO(238, 232, 213, 1),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 5,
+          ),
+          Expanded(
+            child: Column(
+              children: [
+                Tooltip(
+                  message: '首页',
+                  displayHorizontally: true,
+                  useMousePosition: false,
+                  style: TooltipThemeData(
+                    preferBelow: true,
+                    waitDuration: const Duration(milliseconds: 100),
+                    decoration: BoxDecoration(
+                      color: const Color.fromRGBO(253, 246, 227, 1),
+                      borderRadius: BorderRadius.circular(4.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          offset: const Offset(1, 1),
+                          blurRadius: 3.0,
+                        ),
+                      ],
+                    ),
+                  ),
+                  child: IconButton(
+                    icon: const Icon(
+                      FluentIcons.home,
+                      size: 22.0,
+                      color: Color.fromRGBO(108, 112, 106, 1),
+                    ),
+                    onPressed: () {
+                      print('点击首页');
+                    },
+                  ),
                 ),
-                onPressed: () {},
+              ],
+            ),
+          ),
+          Tooltip(
+            message: '设置',
+            displayHorizontally: true,
+            useMousePosition: false,
+            style: TooltipThemeData(
+              preferBelow: true,
+              waitDuration: const Duration(milliseconds: 100),
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(253, 246, 227, 1),
+                borderRadius: BorderRadius.circular(4.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    offset: const Offset(1, 1),
+                    blurRadius: 3.0,
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
+            child: IconButton(
+              icon: const Icon(
+                FluentIcons.settings,
+                size: 22.0,
+                color: Color.fromRGBO(108, 112, 106, 1),
+              ),
+              onPressed: () {
+                print('点击设置');
+              },
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
       ),
     );
   }

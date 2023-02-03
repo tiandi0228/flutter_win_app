@@ -1,6 +1,6 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter_test_app/screens/layout/layout_screen.dart';
+import 'package:flutter_win_app/screens/layout/layout_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,13 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return FluentApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
+      color: const Color.fromRGBO(253, 246, 227, 1),
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          accentColor: Colors.blue,
-          iconTheme: const IconThemeData(size: 24)),
-      darkTheme: ThemeData(
-          scaffoldBackgroundColor: Colors.black,
-          accentColor: Colors.blue,
+          scaffoldBackgroundColor: const Color.fromRGBO(253, 246, 227, 1),
+          accentColor: Colors.orange,
           iconTheme: const IconThemeData(size: 24)),
       home: const LayoutScreen(),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/screens/navigation/widgets/body.dart';
+import 'package:flutter_win_app/screens/navigation/widgets/body.dart';
 
 // 导航
 class NavigationScreen extends StatelessWidget {
