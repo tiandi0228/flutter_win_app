@@ -21,7 +21,12 @@ class LayoutScreen extends StatelessWidget {
               height: 60,
               child: Row(
                 children: [
-                  Expanded(child: MoveWindow()),
+                  Expanded(
+                      child: MoveWindow(
+                    child: Row(
+                      children: const [SizedBox(width: 10), Icon(Icons.abc)],
+                    ),
+                  )),
                   const WindowButtons(),
                 ],
               ),
